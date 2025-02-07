@@ -40,6 +40,16 @@ export class LinkedList {
       return current
     }
   }
+
+  getElementAt(index) {
+    if (index >= 0 && index < this.count) {
+      let node = this.head
+      for (let i = 0; i < index && node != null; i++) {
+        node = node.next
+      }
+      return node
+    }
+  }
 }
 
 const linkedList = new LinkedList()
@@ -49,5 +59,7 @@ linkedList.push(2)
 linkedList.push(3)
 linkedList.push(4)
 linkedList.push(5)
-linkedList.removeAt(3)
+// linkedList.removeAt(3)
+var node = linkedList.getElementAt(3)
+console.log('node', node)
 console.log('linkedList', linkedList)
