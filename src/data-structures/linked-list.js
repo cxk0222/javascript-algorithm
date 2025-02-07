@@ -29,11 +29,8 @@ export class LinkedList {
       if (index === 0) {
         this.head = current.next
       } else {
-        let previous
-        for (let i = 0; i < index && current.next; i++) {
-          previous = current
-          current = current.next
-        }
+        const previous = this.getElementAt(index - 1)
+        current = previous.next
         previous.next = current.next
       }
       this.count -= 1
@@ -43,11 +40,11 @@ export class LinkedList {
 
   getElementAt(index) {
     if (index >= 0 && index < this.count) {
-      let node = this.head
-      for (let i = 0; i < index && node != null; i++) {
-        node = node.next
+      let current = this.head
+      for (let i = 0; i < index && current != null; i++) {
+        current = current.next
       }
-      return node
+      return current
     }
   }
 }
@@ -59,7 +56,5 @@ linkedList.push(2)
 linkedList.push(3)
 linkedList.push(4)
 linkedList.push(5)
-// linkedList.removeAt(3)
-var node = linkedList.getElementAt(3)
-console.log('node', node)
+linkedList.removeAt(3)
 console.log('linkedList', linkedList)
