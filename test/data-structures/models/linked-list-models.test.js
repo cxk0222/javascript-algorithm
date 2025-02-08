@@ -1,4 +1,4 @@
-import { Node } from './linked-list-models'
+import { Node } from '../../../src/data-structures/models/linked-list-models'
 import { expect, test } from 'vitest'
 
 // 测试 Node 类的构造函数是否正确设置 element 属性

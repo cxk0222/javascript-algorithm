@@ -94,17 +94,3 @@ export class LinkedList {
     return this.head
   }
 }
-
-const linkedList = new LinkedList()
-linkedList.push('a')
-linkedList.push('b')
-linkedList.push('c')
-linkedList.push('d')
-linkedList.push('e')
-linkedList.push('f')
-// linkedList.removeAt(3)
-linkedList.insert('bb', 2)
-var i = linkedList.indexOf('d')
-console.log('i', i)
-linkedList.remove('c')
-console.log('linkedList', linkedList)
