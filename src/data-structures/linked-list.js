@@ -81,6 +81,18 @@ export class LinkedList {
     const index = this.indexOf(element)
     return this.removeAt(index)
   }
+
+  size() {
+    return this.count
+  }
+
+  isEmpty() {
+    return this.size() === 0
+  }
+
+  getHead() {
+    return this.head
+  }
 }
 
 const linkedList = new LinkedList()
