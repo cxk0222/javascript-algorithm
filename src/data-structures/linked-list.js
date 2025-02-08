@@ -47,14 +47,34 @@ export class LinkedList {
       return current
     }
   }
+
+  insert(element, index) {
+    if (index >= 0 && index < this.count) {
+      const node = new Node(element)
+      if (index === 0) {
+        const current = this.head
+        node.next = current
+        this.head = node
+      } else {
+        const previous = this.getElementAt(index - 1)
+        const current = previous.next
+        previous.next = node
+        node.next = current
+      }
+      this.count += 1
+      return node
+    }
+  }
 }
 
 const linkedList = new LinkedList()
-linkedList.push(0)
-linkedList.push(1)
-linkedList.push(2)
-linkedList.push(3)
-linkedList.push(4)
-linkedList.push(5)
-linkedList.removeAt(3)
+linkedList.push('a')
+linkedList.push('b')
+linkedList.push('c')
+linkedList.push('d')
+linkedList.push('e')
+linkedList.push('f')
+// linkedList.removeAt(3)
+linkedList.insert('bb', 2)
+// linkedList.remove('c')
 console.log('linkedList', linkedList)
