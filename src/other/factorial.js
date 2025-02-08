@@ -1,4 +1,4 @@
-function factorialIterative(number) {
+export function factorialIterative(number) {
   if (number < 0) return
   let total = 1
   for (let i = number; i > 0; i--) {
@@ -7,7 +7,7 @@ function factorialIterative(number) {
   return total
 }
 
-function factorial(number) {
+export function factorial(number) {
   if (number === 0 || number === 1) {
     return 1
   } else {
