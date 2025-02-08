@@ -65,6 +65,17 @@ export class LinkedList {
       return node
     }
   }
+
+  indexOf(element) {
+    let current = this.head
+    for (let i = 0; i < this.count && current != null; i++) {
+      if (this.equals(current.element, element)) {
+        return i
+      }
+      current = current.next
+    }
+    return -1
+  }
 }
 
 const linkedList = new LinkedList()
@@ -76,5 +87,7 @@ linkedList.push('e')
 linkedList.push('f')
 // linkedList.removeAt(3)
 linkedList.insert('bb', 2)
+var i = linkedList.indexOf('d')
+console.log('i', i)
 // linkedList.remove('c')
 console.log('linkedList', linkedList)
