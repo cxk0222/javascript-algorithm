@@ -76,6 +76,11 @@ export class LinkedList {
     }
     return -1
   }
+
+  remove(element) {
+    const index = this.indexOf(element)
+    return this.removeAt(index)
+  }
 }
 
 const linkedList = new LinkedList()
@@ -89,5 +94,5 @@ linkedList.push('f')
 linkedList.insert('bb', 2)
 var i = linkedList.indexOf('d')
 console.log('i', i)
-// linkedList.remove('c')
+linkedList.remove('c')
 console.log('linkedList', linkedList)
