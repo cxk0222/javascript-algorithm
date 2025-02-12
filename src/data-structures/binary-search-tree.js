@@ -45,6 +45,18 @@ export default class BinarySearchTree {
       this.inOrderTraverseNode(node.right, callback)
     }
   }
+
+  preOrderTraverse(callback) {
+    this.preOrderTraverseNode(this.root, callback)
+  }
+
+  preOrderTraverseNode(node, callback) {
+    if (node != null) {
+      callback(node.key)
+      this.preOrderTraverseNode(node.left, callback)
+      this.preOrderTraverseNode(node.right, callback)
+    }
+  }
 }
 
 const tree = new BinarySearchTree()
@@ -66,4 +78,5 @@ tree.insert(6)
 // console.log('tree', tree)
 
 const printNode = (value) => console.log(value)
-tree.inOrderTraverse(printNode)
+// tree.inOrderTraverse(printNode)
+tree.preOrderTraverse(printNode)
