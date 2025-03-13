@@ -70,6 +70,27 @@ export default class BinarySearchTree {
     }
   }
 
+  levelOrderTraverse(callback) {
+    this.levelOrderTraverseNode(this.root, callback)
+  }
+
+  levelOrderTraverseNode(node, callback) {
+    if (node != null) {
+      const queue = []
+      queue.push(node)
+      while (queue.length > 0) {
+        node = queue.shift()
+        callback(node.key)
+        if (node.left != null) {
+          queue.push(node.left)
+        }
+        if (node.right != null) {
+          queue.push(node.right)
+        }
+      }
+    }
+  }
+
   min() {
     return this.minNode(this.root)
   }
@@ -167,16 +188,17 @@ tree.insert(25)
 tree.insert(6)
 
 const printNode = (value) => console.log(value)
-tree.inOrderTraverse(printNode)
-tree.preOrderTraverse(printNode)
-tree.postOrderTraverse(printNode)
-const min = tree.min()
-console.log('min', min)
+// tree.inOrderTraverse(printNode)
+// tree.preOrderTraverse(printNode)
+// tree.postOrderTraverse(printNode)
+tree.levelOrderTraverse(printNode)
+// const min = tree.min()
+// console.log('min', min)
 
-const max = tree.max()
-console.log('max', max)
+// const max = tree.max()
+// console.log('max', max)
 
-var searched = tree.search(20)
-console.log('searched', searched)
-tree.remove(15)
-console.log('tree', tree)
+// var searched = tree.search(20)
+// console.log('searched', searched)
+// tree.remove(15)
+// console.log('tree', tree)
